@@ -48,3 +48,30 @@ list_studies <-
     # pull out just study_accession
     vapply(result, "[[", "", "study_accession")
 }
+
+#' List traits
+#'
+#' List traits
+#'
+#' @param url The URL of the GWAS Catalog API
+#' @param start First record to retrieve (starting at 0)
+#' @param size Maximum number of results to retrieve
+#'
+#' @return Vector of trait IDs
+#'
+#' @examples
+#' first20 <- list_traits() # first 20 traits
+#' next20 <- list_traits(start=20) # the next 20 traits
+#' first100 <- list_traits(size=100) # returns 100 traits
+list_traits <-
+    function(url=gwascat_url(), start=NULL, size=NULL)
+{
+    query_param <- NULL
+    if(!is.null(start)) query_param$start <- start
+    if(!is.null(size)) query_param$size <- size
+
+    result <- query_gwascat("traits", query_param=query_param, url=url)
+
+    # pull out just trait IDs
+    vapply(result[["_embedded"]]$trait, "[[", "", "trait")
+}
