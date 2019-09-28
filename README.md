@@ -42,10 +42,13 @@ GWAS Catalog:
 - `check_gwascat()` - Check connection.
 - `list_chr()` - List chromosomes
 - `list_studies()` - List of studies
+- `list_traits()` - List of traits
+- `info_study()` - Metadata about a particular study
 - `get_variant()` - Get data frame of associations for a particular variant
+- `get_asso()` - Get associations for a particular chromosome region
+- `get_trait_asso()` - Get associations for a particular trait
 
-
-For further examples, see the [online
+For examples, see the [online
 vignette](https://kbroman.org/GWAScat/GWAScat.html), which is also
 available from within R:
 
