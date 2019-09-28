@@ -4,7 +4,7 @@
 #'
 #' @param url URL for GWAS catalog API
 #'
-#' @return Vector of character strings with chromosome numbers
+#' @return Vector of chromosome numbers (as integers)
 #'
 #' @examples
 #' chr <- list_chromosomes()
@@ -15,5 +15,6 @@ list_chromosomes <-
 {
     z <- query_gwascat("chromosomes", url=url)
 
-    vapply(z[["_embedded"]]$chromosomes, "[[", "", "chromosome")
+    chr <- vapply(z[["_embedded"]]$chromosomes, "[[", "", "chromosome")
+    sort(as.numeric(chr))
 }

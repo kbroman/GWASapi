@@ -10,7 +10,7 @@ list_chromosomes(url = gwascat_url())
 \item{url}{URL for GWAS catalog API}
 }
 \value{
-Vector of character strings with chromosome numbers
+Vector of chromosome numbers (as integers)
 }
 \description{
 List chromosomes
