@@ -20,7 +20,7 @@ check_gwascat <-
        all(sort(names(listresult[["_links"]])) ==
            c("associations", "efoTraits", "self",
              "singleNucleotidePolymorphisms", "studies"))) {
-        return("The GWAS Catalog says hello.")
+        return("The NHGRI-EBI GWAS Catalog says hello.")
     }
 
     stop("result not as expected:", listresult)
