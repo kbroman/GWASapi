@@ -19,3 +19,6 @@ List chromosomes
 chr <- list_chr()
 
 }
+\seealso{
+\code{\link[=list_studies]{list_studies()}}, \code{\link[=list_traits]{list_traits()}}
+}

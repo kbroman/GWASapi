@@ -24,3 +24,6 @@ first20 <- list_studies() # returns 20 studies
 next20 <- list_studies(start=20) # returns the next 20 studies
 first100 <- list_studies(size=100) # returns 100 studies
 }
+\seealso{
+\code{\link[=list_chr]{list_chr()}}, \code{\link[=list_traits]{list_traits()}}
+}

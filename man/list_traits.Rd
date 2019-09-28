@@ -24,3 +24,6 @@ first20 <- list_traits() # first 20 traits
 next20 <- list_traits(start=20) # the next 20 traits
 first100 <- list_traits(size=100) # returns 100 traits
 }
+\seealso{
+\code{\link[=list_studies]{list_studies()}}, \code{\link[=list_chr]{list_chr()}}
+}

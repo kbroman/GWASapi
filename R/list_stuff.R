@@ -9,6 +9,7 @@
 #' @examples
 #' chr <- list_chr()
 #'
+#' @seealso [list_studies()], [list_traits()]
 #' @export
 list_chr <-
     function(url=gwascat_url())
@@ -33,6 +34,8 @@ list_chr <-
 #' first20 <- list_studies() # returns 20 studies
 #' next20 <- list_studies(start=20) # returns the next 20 studies
 #' first100 <- list_studies(size=100) # returns 100 studies
+#' @seealso [list_chr()], [list_traits()]
+#' @export
 list_studies <-
     function(url=gwascat_url(), start=NULL, size=NULL)
 {
@@ -63,6 +66,8 @@ list_studies <-
 #' first20 <- list_traits() # first 20 traits
 #' next20 <- list_traits(start=20) # the next 20 traits
 #' first100 <- list_traits(size=100) # returns 100 traits
+#' @export
+#' @seealso [list_studies()], [list_chr()]
 list_traits <-
     function(url=gwascat_url(), start=NULL, size=NULL)
 {
