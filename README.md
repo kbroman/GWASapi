@@ -5,7 +5,7 @@
 
 ---
 
-See the [API documentation](https://www.ebi.ac.uk/gwas/docs/api)
+See the [API documentation](https://www.ebi.ac.uk/gwas/summary-statistics/docs/)
 as well as [Pjotr Prins](http://thebird.nl/)'s [documentation at
 github](https://github.com/pjotrp/racket-summary-stats)
 
@@ -32,7 +32,7 @@ Then use `devtools::install_github()` to install GWAScat.
 
 For an understanding of the
 [NHGRI-EBI GWAS Catalog of Summary Statistics](https://www.ebi.ac.uk/gwas)
-API, see [its documentation](https://www.ebi.ac.uk/gwas/docs/api),
+API, see [its documentation](https://www.ebi.ac.uk/gwas/summary-statistics/docs/),
 as well as [Pjotr Prins](http://thebird.nl/)'s [documentation at
 github](https://github.com/pjotrp/racket-summary-stats)
 
@@ -40,6 +40,7 @@ The GWAScat package has a set of functions for connecting to the
 GWAS Catalog:
 
 - `check_gwascat()` - Check connection.
+
 
 For further examples, see the [online
 vignette](https://kbroman.org/GWAScat/GWAScat.html), which is also

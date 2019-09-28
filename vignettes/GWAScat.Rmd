@@ -17,4 +17,4 @@ opts_chunk$set(fig.width=7, fig.height=4.5,
 The [GWAScat](https://github.com/rqtl/GWAScat) package provides
 access to the [NHGRI-EBI catalog of GWAS summary statistics](https://www.ebi.ac.uk/gwas).
 For details on the API, see [its
-documentation](https://www.ebi.ac.uk/gwas/docs/api).
+documentation](https://www.ebi.ac.uk/gwas/summary-statistics/docs/).

@@ -15,6 +15,13 @@ Tools for connecting to the NHGRI-EBI API for GWAS summary statistics
 }
 }
 
+\section{API documentation}{
+
+\itemize{
+\item \href{https://www.ebi.ac.uk/gwas/summary-statistics/docs/}{NHGRI-EBI GWAS Catalog API documentation}
+}
+}
+
 \seealso{
 Useful links:
 \itemize{
