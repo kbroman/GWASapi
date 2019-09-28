@@ -6,7 +6,7 @@
 \alias{GWAScat-package}
 \title{GWAScat: NHGRI-EBI GWAS Catalog of Summary Statistics}
 \description{
-Tools for connecting to the NHGRI-EBI API for GWAS summary statistics
+Tools for connecting to the NHGRI-EBI API for GWAS summary statistics.
 }
 \section{Vignette}{
 

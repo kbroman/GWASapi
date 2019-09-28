@@ -2,7 +2,7 @@ Package: GWAScat
 Version: 0.1-1
 Date: 2019-09-28
 Title: NHGRI-EBI GWAS Catalog of Summary Statistics
-Description: Tools for connecting to the NHGRI-EBI API for GWAS summary statistics
+Description: Tools for connecting to the NHGRI-EBI API for GWAS summary statistics.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
 Maintainer: Karl W Broman <broman@wisc.edu>
 Authors@R: c(person("Karl W", "Broman", role=c("aut", "cre"),
