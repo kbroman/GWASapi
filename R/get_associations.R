@@ -18,7 +18,6 @@
 #' get_variant("rs2228603", 19)
 #' # return just the associations with P < 1e-8
 #' get_variant("rs2228603", 19, p_upper=1e-8)
-
 #' @export
 get_variant <-
     function(rsnum, chr=NULL, p_lower=NULL, p_upper=NULL, url=gwascat_url())
