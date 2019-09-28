@@ -68,7 +68,7 @@ get_variant <-
 #'
 #' @examples
 #' result <- get_asso(chr=19, bp_lower=19200000, bp_upper=19300000)
-#' @seealso [get_variant(), get_trait_asso()]
+#' @seealso [get_variant()], [get_trait_asso()]
 #' @export
 
 get_asso <-

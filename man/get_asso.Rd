@@ -37,5 +37,5 @@ Get GWAS associations for a given region
 result <- get_asso(chr=19, bp_lower=19200000, bp_upper=19300000)
 }
 \seealso{
-\code{\link[=get_variant(), get_trait_asso]{get_variant(), get_trait_asso()}}
+\code{\link[=get_variant]{get_variant()}}, \code{\link[=get_trait_asso]{get_trait_asso()}}
 }
