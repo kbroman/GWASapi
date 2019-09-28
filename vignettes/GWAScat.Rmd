@@ -94,7 +94,7 @@ list_chr()
 ```
 
 
-## Get variants
+## Get associations
 
 To get associations for a specific variant by its rs-number, use
 `get_variant()`. If you know the chromosome it is on, you'll get
@@ -114,4 +114,28 @@ associations with p-value < 10^-10^, you would do:
 ```{r get_variant_pupper}
 result <- get_variant("rs2228603", 19, p_upper=1e-10)
 result[,c("p_value", "study_accession", "trait")]
+```
+
+To get associations for a specific region, use `get_asso()`.
+For example, to get the region from 19.2 Mbp to 19.3 Mbp on chr 19:
+
+```{r get_asso}
+result <- get_asso(chr=19, bp_lower=19200000, bp_upper=19300000)
+result[,c("chromosome", "base_pair_location", "p_value", "study_accession", "trait")]
+```
+
+You can restrict those results to a particular study.
+
+```{r get_asso_by_study}
+result <- get_asso(chr=19, bp_lower=19200000, bp_upper=19300000, study="GCST000392")
+result[,c("chromosome", "base_pair_location", "p_value", "study_accession", "trait")]
+```
+
+To get associations for a given trait, use `get_trait_asso()`. You
+can't restrict this to a given chromosome region.
+
+```{r get_trait_asso}
+result <- get_trait_asso("EFO_0001360", p_upper=1e-100, size=1000)
+nrow(result)
+result[1:5, c("chromosome", "base_pair_location", "p_value", "study_accession", "trait")]
 ```
