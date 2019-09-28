@@ -40,6 +40,7 @@ The GWAScat package has a set of functions for connecting to the
 GWAS Catalog:
 
 - `check_gwascat()` - Check connection.
+- `list_chromosomes()` - List chromosomes
 
 
 For further examples, see the [online
