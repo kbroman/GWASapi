@@ -2,6 +2,7 @@
 
 export(check_gwascat)
 export(gwascat_url)
+export(list_chromosomes)
 importFrom(httr,GET)
 importFrom(httr,content)
 importFrom(httr,stop_for_status)
