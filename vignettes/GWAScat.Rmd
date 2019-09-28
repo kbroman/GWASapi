@@ -10,8 +10,8 @@ vignette: >
 ```{r knitr_options, include=FALSE}
 library(knitr)
 opts_chunk$set(fig.width=7, fig.height=4.5,
-               dev.args=list(pointsize=16),
-               eval=FALSE)
+               dev.args=list(pointsize=16))
+options(width=95)
 ```
 
 The [GWAScat](https://github.com/rqtl/GWAScat) package provides
@@ -20,3 +20,98 @@ For details on the API, see [its
 documentation](https://www.ebi.ac.uk/gwas/summary-statistics/docs/),
 as well as [Pjotr Prins](http://thebird.nl/)'s [documentation at
 github](https://github.com/pjotrp/racket-summary-stats).
+
+
+## Installation
+
+You can install GWAScat from
+[GitHub](https://github.com/rqtl/GWAScat).
+
+You first need to install the
+[devtools](https://github.com/hadley/devtools).
+
+```{r install_devtools, eval=FALSE}
+install.packages("devtools")
+```
+
+Then use `devtools::install_github()` to install GWAScat.
+
+```{r install_with_devtools, eval=FALSE}
+library(devtools)
+install_github("rqtl/GWAScat")
+```
+
+Load the package with `library()`.
+
+```{r load_package}
+library(GWAScat)
+```
+
+
+## Lists of things
+
+The purpose of the GWAScat package is to provide access to summary
+statistics for human GWAS. First, you can get lists of studies
+and traits that are available.
+
+To get lists of studies, use `list_studies()`. The default is to
+return just 20 studies. You can control that limit with the argument
+`size`. You can also use `start` to step through the full set.
+
+```{r list_studies}
+list_studies(size=5)
+```
+
+To retrieve _all_ studies, set a higher limit
+
+```{r list_all_studies}
+all_studies <- list_studies(size=1000)
+length(all_studies)
+```
+
+To get a list of traits, use `list_traits()`. Again the default is to
+return just 20 values. To get all traits, use the `size` argument.
+
+```{r list_all_traits}
+all_traits <- list_traits(size=1000)
+length(all_traits)
+```
+
+The traits are returned as identifiers like `r all_traits[1]`. To get
+a description of a trait, you can use the ontology lookup service, for
+example <https://www.ebi.ac.uk/efo/EFO_0001360>
+
+Note that the traits returned are not all distinct.
+
+```{r table_table_traits}
+table(table(all_traits))
+```
+
+Chromosomes are stored as integers 1-24.
+
+```{r list_chr}
+list_chr()
+```
+
+
+## Get variants
+
+To get associations for a specific variant by its rs-number, use
+`get_variant()`. If you know the chromosome it is on, you'll get
+faster results by providing the chromosome. And again, the default is
+to return just 20 values, so use the `size` and `start` arguments if
+you want a comprehensive list.
+
+```{r get_variant}
+result <- get_variant("rs2228603", 19, size=5)
+result[,c("p_value", "study_accession", "trait")]
+```
+
+Use the arguments `p_lower` and `p_upper` to focus on associations
+with p-value in a specified range. For example, to get all of the
+associations with p-value < 10^-10^, you would do:
+
+```{r get_variant_pupper}
+result <- get_variant("rs2228603", 19, p_upper=1e-10)
+result[,c("p_value", "study_accession", "trait")]
+```
