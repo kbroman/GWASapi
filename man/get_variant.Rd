@@ -41,4 +41,8 @@ next20 <- get_variant("rs2228603", 19, start=20)
 first100 <- get_variant("rs2228603", 19, size=100)
 # return just the associations with P < 1e-8
 top_results <- get_variant("rs2228603", 19, p_upper=1e-8)
+
+}
+\seealso{
+\code{\link[=get_asso]{get_asso()}}, \code{\link[=get_trait_asso]{get_trait_asso()}}
 }
