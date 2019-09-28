@@ -2,7 +2,9 @@
 
 export(check_gwascat)
 export(get_variant)
+export(gwascat_oldurl)
 export(gwascat_url)
+export(info_study)
 export(list_chr)
 export(list_studies)
 export(list_traits)
