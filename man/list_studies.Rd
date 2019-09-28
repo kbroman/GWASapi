@@ -4,7 +4,8 @@
 \alias{list_studies}
 \title{List studies}
 \usage{
-list_studies(url = gwascat_url(), start = NULL, size = NULL)
+list_studies(url = gwascat_url(), start = NULL, size = NULL,
+  trait = NULL)
 }
 \arguments{
 \item{url}{The URL of the GWAS Catalog API}
@@ -12,6 +13,8 @@ list_studies(url = gwascat_url(), start = NULL, size = NULL)
 \item{start}{First record to retrieve (starting at 0)}
 
 \item{size}{Maximum number of results to retrieve}
+
+\item{trait}{If provided, restrict search to studies that included the specified trait.}
 }
 \value{
 Vector of study accessions
@@ -23,6 +26,7 @@ List studies
 first20 <- list_studies() # returns 20 studies
 next20 <- list_studies(start=20) # returns the next 20 studies
 first100 <- list_studies(size=100) # returns 100 studies
+with_trait <- list_studies(trait="EFO_0001360")
 }
 \seealso{
 \code{\link[=list_chr]{list_chr()}}, \code{\link[=list_traits]{list_traits()}}

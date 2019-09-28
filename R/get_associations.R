@@ -6,6 +6,7 @@
 #' @param chr chromosome number if known
 #' @param p_lower Lower bound on p-values
 #' @param p_upper Upper bound of p-values
+#' @param study Restrict to a particular study
 #' @param url The URL of the GWAS Catalog API
 #' @param start First record to retrieve (starting at 0)
 #' @param size Maximum number of results to retrieve
@@ -27,7 +28,7 @@
 #' top_results <- get_variant("rs2228603", 19, p_upper=1e-8)
 #' @export
 get_variant <-
-    function(rsnum, chr=NULL, p_lower=NULL, p_upper=NULL,
+    function(rsnum, chr=NULL, p_lower=NULL, p_upper=NULL, study=NULL,
              url=gwascat_url(), start=NULL, size=NULL)
 {
     query <- glue("associations/{rsnum}")
@@ -39,6 +40,7 @@ get_variant <-
     if(!is.null(p_lower) && !is.null(p_upper) && p_lower > p_upper) {
         stop("p_lower should be < p_upper")
     }
+    if(!is.null(study)) query_param$study_accession <- study
     if(!is.null(start)) query_param$start <- start
     if(!is.null(size)) query_param$size <- size
 

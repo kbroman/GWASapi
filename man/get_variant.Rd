@@ -5,7 +5,7 @@
 \title{Get associations for a given variant}
 \usage{
 get_variant(rsnum, chr = NULL, p_lower = NULL, p_upper = NULL,
-  url = gwascat_url(), start = NULL, size = NULL)
+  study = NULL, url = gwascat_url(), start = NULL, size = NULL)
 }
 \arguments{
 \item{rsnum}{RS number for a variant}
@@ -15,6 +15,8 @@ get_variant(rsnum, chr = NULL, p_lower = NULL, p_upper = NULL,
 \item{p_lower}{Lower bound on p-values}
 
 \item{p_upper}{Upper bound of p-values}
+
+\item{study}{Restrict to a particular study}
 
 \item{url}{The URL of the GWAS Catalog API}
 
