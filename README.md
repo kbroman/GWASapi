@@ -7,7 +7,7 @@
 
 See the [API documentation](https://www.ebi.ac.uk/gwas/summary-statistics/docs/)
 as well as [Pjotr Prins](http://thebird.nl/)'s [documentation at
-github](https://github.com/pjotrp/racket-summary-stats)
+github](https://github.com/pjotrp/racket-summary-stats).
 
 ---
 
