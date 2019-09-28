@@ -10,5 +10,5 @@
 #' @export
 gwascat_url <- function()
 {
-    "https://www.ebi.ac.uk/gwas/rest/api/"
+    "https://www.ebi.ac.uk/gwas/summary-statistics/api"
 }
