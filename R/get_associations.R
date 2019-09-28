@@ -16,11 +16,15 @@
 #'
 #' @examples
 #' # get associations for a given variant
-#' get_variant("rs2228603")
+#' results <- get_variant("rs2228603")
 #' # use information about the chromosome it's on
-#' get_variant("rs2228603", 19)
+#' results <- get_variant("rs2228603", 19)
+#' # get the next 20 results
+#' next20 <- get_variant("rs2228603", 19, start=20)
+#' # get 100 results rather than just 20
+#' first100 <- get_variant("rs2228603", 19, size=100)
 #' # return just the associations with P < 1e-8
-#' get_variant("rs2228603", 19, p_upper=1e-8)
+#' top_results <- get_variant("rs2228603", 19, p_upper=1e-8)
 #' @export
 get_variant <-
     function(rsnum, chr=NULL, p_lower=NULL, p_upper=NULL,

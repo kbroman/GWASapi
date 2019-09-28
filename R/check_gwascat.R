@@ -13,14 +13,13 @@
 check_gwascat <-
     function(url=gwascat_url())
 {
-    listresult <- query_gwascat("profile", url=url)
+    listresult <- query_gwascat("", url=url)
 
     if(length(listresult) == 1 && names(listresult)=="_links" &&
-       length(listresult[["_links"]]) == 5 &&
+       length(listresult[["_links"]]) == 4 &&
        all(sort(names(listresult[["_links"]])) ==
-           c("associations", "efoTraits", "self",
-             "singleNucleotidePolymorphisms", "studies"))) {
-        return("The NHGRI-EBI GWAS Catalog says hello.")
+           c("associations", "chromosomes", "studies", "traits"))) {
+        return("Successfully connected to the NHGRI-EBI GWAS Catalog.")
     }
 
     stop("result not as expected:", listresult)

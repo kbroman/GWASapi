@@ -40,7 +40,9 @@ The GWAScat package has a set of functions for connecting to the
 GWAS Catalog:
 
 - `check_gwascat()` - Check connection.
-- `list_chromosomes()` - List chromosomes
+- `list_chr()` - List chromosomes
+- `list_studies()` - List of studies
+- `get_variant()` - Get data frame of associations for a particular variant
 
 
 For further examples, see the [online
