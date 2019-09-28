@@ -12,7 +12,8 @@ Depends:
 Imports:
     utils,
     jsonlite,
-    httr
+    httr,
+    glue
 Suggests:
     testthat,
     devtools,

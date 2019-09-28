@@ -2,14 +2,19 @@
 # convert to list if necessary
 #' @importFrom httr GET content stop_for_status
 query_gwascat <-
-    function(query=NULL, url=gwascat_url(), output=c("parsed", "text", "raw"), encoding="UTF-8")
+    function(query=NULL, query_param=NULL, url=gwascat_url(),
+             output=c("parsed", "text", "raw"), encoding="UTF-8")
 {
     output <- match.arg(output)
 
     delay_if_necessary()
     if(!is.null(query)) url <- paste0(url, "/", query)
 
-    result <- httr::GET(url)
+    if(is.null(query_param)) {
+        result <- httr::GET(url)
+    } else {
+        result <- httr::GET(url, query=query_param)
+    }
     httr::stop_for_status(result)
     result <- httr::content(result, encoding=encoding, as=output)
 
