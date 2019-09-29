@@ -5,7 +5,7 @@
 \title{Get GWAS associations for a particular trait}
 \usage{
 get_trait_asso(trait = NULL, study = NULL, p_lower = NULL,
-  p_upper = NULL, url = gwasapi_url(), start = NULL, size = NULL)
+  p_upper = NULL, start = NULL, size = NULL)
 }
 \arguments{
 \item{trait}{Restrict to a particular study}
@@ -15,8 +15,6 @@ get_trait_asso(trait = NULL, study = NULL, p_lower = NULL,
 \item{p_lower}{Lower bound on p-values}
 
 \item{p_upper}{Upper bound of p-values}
-
-\item{url}{The URL of the GWAS Catalog API}
 
 \item{start}{First record to retrieve (starting at 0)}
 

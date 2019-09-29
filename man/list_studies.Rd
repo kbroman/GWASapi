@@ -4,17 +4,14 @@
 \alias{list_studies}
 \title{List studies}
 \usage{
-list_studies(url = gwasapi_url(), start = NULL, size = NULL,
-  trait = NULL)
+list_studies(trait = NULL, start = NULL, size = NULL)
 }
 \arguments{
-\item{url}{The URL of the GWAS Catalog API}
+\item{trait}{If provided, restrict search to studies that included the specified trait.}
 
 \item{start}{First record to retrieve (starting at 0)}
 
 \item{size}{Maximum number of results to retrieve}
-
-\item{trait}{If provided, restrict search to studies that included the specified trait.}
 }
 \value{
 Vector of study accessions

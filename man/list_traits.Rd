@@ -4,11 +4,9 @@
 \alias{list_traits}
 \title{List traits}
 \usage{
-list_traits(url = gwasapi_url(), start = NULL, size = NULL)
+list_traits(start = NULL, size = NULL)
 }
 \arguments{
-\item{url}{The URL of the GWAS Catalog API}
-
 \item{start}{First record to retrieve (starting at 0)}
 
 \item{size}{Maximum number of results to retrieve}

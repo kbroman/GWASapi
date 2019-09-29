@@ -2,8 +2,6 @@
 #'
 #' Check if the GWAS Catalog is live
 #'
-#' @param url URL for the GWAS Catalog
-#'
 #' @return Character string.
 #'
 #' @export
@@ -11,8 +9,9 @@
 #' @examples
 #' check_gwasapi()
 check_gwasapi <-
-    function(url=gwasapi_url())
+    function()
 {
+    url<- gwasapi_url()
     listresult <- query_gwasapi("", url=url)
 
     if(length(listresult) == 1 && names(listresult)=="_links" &&

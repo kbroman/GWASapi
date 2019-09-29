@@ -4,12 +4,10 @@
 \alias{info_study}
 \title{Information about a study}
 \usage{
-info_study(study, url = gwasapi_oldurl())
+info_study(study)
 }
 \arguments{
 \item{study}{Study identifieer}
-
-\item{url}{The url for the API (actually the old API)}
 }
 \value{
 List of meta-data

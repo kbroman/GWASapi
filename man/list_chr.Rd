@@ -4,10 +4,7 @@
 \alias{list_chr}
 \title{List chromosomes}
 \usage{
-list_chr(url = gwasapi_url())
-}
-\arguments{
-\item{url}{URL for GWAS catalog API}
+list_chr()
 }
 \value{
 Vector of chromosome numbers (as integers)

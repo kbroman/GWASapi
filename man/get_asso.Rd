@@ -5,8 +5,7 @@
 \title{Get GWAS associations for a given region}
 \usage{
 get_asso(chr, bp_lower = NULL, bp_upper = NULL, study = NULL,
-  p_lower = NULL, p_upper = NULL, url = gwasapi_url(),
-  start = NULL, size = NULL)
+  p_lower = NULL, p_upper = NULL, start = NULL, size = NULL)
 }
 \arguments{
 \item{chr}{chromosome number}
@@ -20,8 +19,6 @@ get_asso(chr, bp_lower = NULL, bp_upper = NULL, study = NULL,
 \item{p_lower}{Lower bound on p-values}
 
 \item{p_upper}{Upper bound of p-values}
-
-\item{url}{The URL of the GWAS Catalog API}
 
 \item{start}{First record to retrieve (starting at 0)}
 

@@ -2,8 +2,6 @@
 #'
 #' List chromosomes
 #'
-#' @param url URL for GWAS catalog API
-#'
 #' @return Vector of chromosome numbers (as integers)
 #'
 #' @examples
@@ -12,8 +10,9 @@
 #' @seealso [list_studies()], [list_traits()]
 #' @export
 list_chr <-
-    function(url=gwasapi_url())
+    function()
 {
+    url <- gwasapi_url()
     z <- query_gwasapi("chromosomes", url=url)
 
     chr <- vapply(z[["_embedded"]]$chromosomes, "[[", "", "chromosome")
@@ -24,10 +23,9 @@ list_chr <-
 #'
 #' List studies
 #'
-#' @param url The URL of the GWAS Catalog API
+#' @param trait If provided, restrict search to studies that included the specified trait.
 #' @param start First record to retrieve (starting at 0)
 #' @param size Maximum number of results to retrieve
-#' @param trait If provided, restrict search to studies that included the specified trait.
 #'
 #' @return Vector of study accessions
 #'
@@ -39,8 +37,9 @@ list_chr <-
 #' @seealso [list_chr()], [list_traits()]
 #' @export
 list_studies <-
-    function(url=gwasapi_url(), start=NULL, size=NULL, trait=NULL)
+    function(trait=NULL, start=NULL, size=NULL)
 {
+    url <- gwasapi_url()
     query_param <- NULL
     if(!is.null(start)) query_param$start <- start
     if(!is.null(size)) query_param$size <- size
@@ -64,7 +63,6 @@ list_studies <-
 #'
 #' List traits
 #'
-#' @param url The URL of the GWAS Catalog API
 #' @param start First record to retrieve (starting at 0)
 #' @param size Maximum number of results to retrieve
 #'
@@ -77,8 +75,9 @@ list_studies <-
 #' @export
 #' @seealso [list_studies()], [list_chr()]
 list_traits <-
-    function(url=gwasapi_url(), start=NULL, size=NULL)
+    function(start=NULL, size=NULL)
 {
+    url <- gwasapi_url()
     query_param <- NULL
     if(!is.null(start)) query_param$start <- start
     if(!is.null(size)) query_param$size <- size

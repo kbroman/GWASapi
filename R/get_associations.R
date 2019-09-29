@@ -7,7 +7,6 @@
 #' @param p_lower Lower bound on p-values
 #' @param p_upper Upper bound of p-values
 #' @param study Restrict to a particular study
-#' @param url The URL of the GWAS Catalog API
 #' @param start First record to retrieve (starting at 0)
 #' @param size Maximum number of results to retrieve
 #'
@@ -31,8 +30,9 @@
 #' @export
 get_variant <-
     function(rsnum, chr=NULL, p_lower=NULL, p_upper=NULL, study=NULL,
-             url=gwasapi_url(), start=NULL, size=NULL)
+             start=NULL, size=NULL)
 {
+    url <- gwasapi_url()
     query <- glue("associations/{rsnum}")
     if(!is.null(chr)) query <- glue("chromosomes/{chr}/{query}")
 
@@ -60,7 +60,6 @@ get_variant <-
 #' @param study Restrict to a particular study
 #' @param p_lower Lower bound on p-values
 #' @param p_upper Upper bound of p-values
-#' @param url The URL of the GWAS Catalog API
 #' @param start First record to retrieve (starting at 0)
 #' @param size Maximum number of results to retrieve
 #'
@@ -73,8 +72,9 @@ get_variant <-
 
 get_asso <-
     function(chr, bp_lower=NULL, bp_upper=NULL, study=NULL,
-             p_lower=NULL, p_upper=NULL, url=gwasapi_url(), start=NULL, size=NULL)
+             p_lower=NULL, p_upper=NULL, start=NULL, size=NULL)
 {
+    url <- gwasapi_url()
     query <- glue("chromosomes/{chr}/associations")
 
     query_param <- NULL
@@ -102,7 +102,6 @@ get_asso <-
 #' @param study Restrict to a particular study
 #' @param p_lower Lower bound on p-values
 #' @param p_upper Upper bound of p-values
-#' @param url The URL of the GWAS Catalog API
 #' @param start First record to retrieve (starting at 0)
 #' @param size Maximum number of results to retrieve
 #'
@@ -115,8 +114,9 @@ get_asso <-
 
 get_trait_asso <-
     function(trait=NULL, study=NULL,
-             p_lower=NULL, p_upper=NULL, url=gwasapi_url(), start=NULL, size=NULL)
+             p_lower=NULL, p_upper=NULL, start=NULL, size=NULL)
 {
+    url <- gwasapi_url()
     if(is.null(trait) && is.null(study)) {
         stop("Provide trait or study")
     }

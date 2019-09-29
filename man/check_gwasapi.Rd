@@ -4,10 +4,7 @@
 \alias{check_gwasapi}
 \title{Check if the GWAS Catalog is live}
 \usage{
-check_gwasapi(url = gwasapi_url())
-}
-\arguments{
-\item{url}{URL for the GWAS Catalog}
+check_gwasapi()
 }
 \value{
 Character string.
