@@ -10,10 +10,10 @@
 #' @export
 
 info_study <-
-    function(study, url=gwascat_oldurl())
+    function(study, url=gwasapi_oldurl())
 {
 
-    result <- query_gwascat(glue("studies/{study}"), url=url)
+    result <- query_gwasapi(glue("studies/{study}"), url=url)
 
     # strip off links
     result[!(names(result) %in% "_links")]

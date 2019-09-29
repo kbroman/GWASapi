@@ -5,10 +5,10 @@
 #' @return The URL, as character string
 #'
 #' @examples
-#' gwascat_url()
+#' gwasapi_url()
 #'
 #' @export
-gwascat_url <- function()
+gwasapi_url <- function()
 {
     "https://www.ebi.ac.uk/gwas/summary-statistics/api"
 }
@@ -21,10 +21,10 @@ gwascat_url <- function()
 #' @return The URL, as character string
 #'
 #' @examples
-#' gwascat_url()
+#' gwasapi_url()
 #'
 #' @export
-gwascat_oldurl <- function()
+gwasapi_oldurl <- function()
 {
     "https://www.ebi.ac.uk/gwas/rest/api"
 }

@@ -1,4 +1,4 @@
-Package: GWAScat
+Package: GWASapi
 Version: 0.1-1
 Date: 2019-09-28
 Title: NHGRI-EBI GWAS Catalog of Summary Statistics
@@ -21,8 +21,8 @@ Suggests:
     knitr,
     rmarkdown
 License: MIT + file LICENSE
-URL: https://github.com/rqtl/GWAScat
-BugReports: https://github.com/rqtl/GWAScat/issues
+URL: https://github.com/rqtl/GWASapi
+BugReports: https://github.com/rqtl/GWASapi/issues
 LazyData: true
 Encoding: UTF-8
 ByteCompile: true

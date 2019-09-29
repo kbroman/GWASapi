@@ -12,9 +12,9 @@
 #' @seealso [list_studies()], [list_traits()]
 #' @export
 list_chr <-
-    function(url=gwascat_url())
+    function(url=gwasapi_url())
 {
-    z <- query_gwascat("chromosomes", url=url)
+    z <- query_gwasapi("chromosomes", url=url)
 
     chr <- vapply(z[["_embedded"]]$chromosomes, "[[", "", "chromosome")
     sort(as.numeric(chr))
@@ -39,7 +39,7 @@ list_chr <-
 #' @seealso [list_chr()], [list_traits()]
 #' @export
 list_studies <-
-    function(url=gwascat_url(), start=NULL, size=NULL, trait=NULL)
+    function(url=gwasapi_url(), start=NULL, size=NULL, trait=NULL)
 {
     query_param <- NULL
     if(!is.null(start)) query_param$start <- start
@@ -48,7 +48,7 @@ list_studies <-
     query <- "studies"
     if(!is.null(trait)) { query <- glue("traits/{trait}/studies") }
 
-    result <- query_gwascat(query, query_param=query_param, url=url)
+    result <- query_gwasapi(query, query_param=query_param, url=url)
 
     result <- result[["_embedded"]]$studies
     # if you didn't specify the trait, need to jump in one extra level
@@ -77,13 +77,13 @@ list_studies <-
 #' @export
 #' @seealso [list_studies()], [list_chr()]
 list_traits <-
-    function(url=gwascat_url(), start=NULL, size=NULL)
+    function(url=gwasapi_url(), start=NULL, size=NULL)
 {
     query_param <- NULL
     if(!is.null(start)) query_param$start <- start
     if(!is.null(size)) query_param$size <- size
 
-    result <- query_gwascat("traits", query_param=query_param, url=url)
+    result <- query_gwasapi("traits", query_param=query_param, url=url)
 
     # pull out just trait IDs
     vapply(result[["_embedded"]]$trait, "[[", "", "trait")

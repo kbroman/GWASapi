@@ -1,5 +1,5 @@
 ---
-title: GWAScat User Guide
+title: GWASapi User Guide
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{R/GNapi User Guide}
@@ -14,7 +14,7 @@ opts_chunk$set(fig.width=7, fig.height=4.5,
 options(width=95)
 ```
 
-The [GWAScat](https://github.com/rqtl/GWAScat) package provides
+The [GWASapi](https://github.com/rqtl/GWASapi) package provides
 access to the [NHGRI-EBI catalog of GWAS summary statistics](https://www.ebi.ac.uk/gwas).
 For details on the API, see [its
 documentation](https://www.ebi.ac.uk/gwas/summary-statistics/docs/),
@@ -24,8 +24,8 @@ github](https://github.com/pjotrp/racket-summary-stats).
 
 ## Installation
 
-You can install GWAScat from
-[GitHub](https://github.com/rqtl/GWAScat).
+You can install GWASapi from
+[GitHub](https://github.com/rqtl/GWASapi).
 
 You first need to install the
 [devtools](https://github.com/hadley/devtools).
@@ -34,23 +34,23 @@ You first need to install the
 install.packages("devtools")
 ```
 
-Then use `devtools::install_github()` to install GWAScat.
+Then use `devtools::install_github()` to install GWASapi.
 
 ```{r install_with_devtools, eval=FALSE}
 library(devtools)
-install_github("rqtl/GWAScat")
+install_github("rqtl/GWASapi")
 ```
 
 Load the package with `library()`.
 
 ```{r load_package}
-library(GWAScat)
+library(GWASapi)
 ```
 
 
 ## Lists of things
 
-The purpose of the GWAScat package is to provide access to summary
+The purpose of the GWASapi package is to provide access to summary
 statistics for human GWAS. First, you can get lists of studies
 and traits that are available.
 

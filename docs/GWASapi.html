@@ -13,7 +13,7 @@
 
 
 
-<title>GWAScat User Guide</title>
+<title>GWASapi User Guide</title>
 
 
 
@@ -300,25 +300,25 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 
-<h1 class="title toc-ignore">GWAScat User Guide</h1>
+<h1 class="title toc-ignore">GWASapi User Guide</h1>
 
 
 
-<p>The <a href="https://github.com/rqtl/GWAScat">GWAScat</a> package provides access to the <a href="https://www.ebi.ac.uk/gwas">NHGRI-EBI catalog of GWAS summary statistics</a>. For details on the API, see <a href="https://www.ebi.ac.uk/gwas/summary-statistics/docs/">its documentation</a>, as well as <a href="http://thebird.nl/">Pjotr Prins</a>’s <a href="https://github.com/pjotrp/racket-summary-stats">documentation at github</a>.</p>
+<p>The <a href="https://github.com/rqtl/GWASapi">GWASapi</a> package provides access to the <a href="https://www.ebi.ac.uk/gwas">NHGRI-EBI catalog of GWAS summary statistics</a>. For details on the API, see <a href="https://www.ebi.ac.uk/gwas/summary-statistics/docs/">its documentation</a>, as well as <a href="http://thebird.nl/">Pjotr Prins</a>’s <a href="https://github.com/pjotrp/racket-summary-stats">documentation at github</a>.</p>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
-<p>You can install GWAScat from <a href="https://github.com/rqtl/GWAScat">GitHub</a>.</p>
+<p>You can install GWASapi from <a href="https://github.com/rqtl/GWASapi">GitHub</a>.</p>
 <p>You first need to install the <a href="https://github.com/hadley/devtools">devtools</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</a></code></pre></div>
-<p>Then use <code>devtools::install_github()</code> to install GWAScat.</p>
+<p>Then use <code>devtools::install_github()</code> to install GWASapi.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(devtools)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">install_github</span>(<span class="st">&quot;rqtl/GWAScat&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">install_github</span>(<span class="st">&quot;rqtl/GWASapi&quot;</span>)</a></code></pre></div>
 <p>Load the package with <code>library()</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(GWAScat)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(GWASapi)</a></code></pre></div>
 </div>
 <div id="lists-of-things" class="section level2">
 <h2>Lists of things</h2>
-<p>The purpose of the GWAScat package is to provide access to summary statistics for human GWAS. First, you can get lists of studies and traits that are available.</p>
+<p>The purpose of the GWASapi package is to provide access to summary statistics for human GWAS. First, you can get lists of studies and traits that are available.</p>
 <p>To get lists of studies, use <code>list_studies()</code>. The default is to return just 20 studies. You can control that limit with the argument <code>size</code>. You can also use <code>start</code> to step through the full set.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">list_studies</span>(<span class="dt">size=</span><span class="dv">5</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;GCST000028&quot; &quot;GCST000392&quot; &quot;GCST000568&quot; &quot;GCST000569&quot; &quot;GCST000571&quot;</code></pre>

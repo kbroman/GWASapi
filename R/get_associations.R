@@ -31,7 +31,7 @@
 #' @export
 get_variant <-
     function(rsnum, chr=NULL, p_lower=NULL, p_upper=NULL, study=NULL,
-             url=gwascat_url(), start=NULL, size=NULL)
+             url=gwasapi_url(), start=NULL, size=NULL)
 {
     query <- glue("associations/{rsnum}")
     if(!is.null(chr)) query <- glue("chromosomes/{chr}/{query}")
@@ -46,7 +46,7 @@ get_variant <-
     if(!is.null(start)) query_param$start <- start
     if(!is.null(size)) query_param$size <- size
 
-    result <- query_gwascat(query, query_param=query_param, url=url)
+    result <- query_gwasapi(query, query_param=query_param, url=url)
     list2df(result[["_embedded"]]$associations, exclude="_links")
 }
 
@@ -73,7 +73,7 @@ get_variant <-
 
 get_asso <-
     function(chr, bp_lower=NULL, bp_upper=NULL, study=NULL,
-             p_lower=NULL, p_upper=NULL, url=gwascat_url(), start=NULL, size=NULL)
+             p_lower=NULL, p_upper=NULL, url=gwasapi_url(), start=NULL, size=NULL)
 {
     query <- glue("chromosomes/{chr}/associations")
 
@@ -89,7 +89,7 @@ get_asso <-
     if(!is.null(bp_lower)) query_param$bp_lower <- bp_lower
     if(!is.null(bp_upper)) query_param$bp_upper <- bp_upper
 
-    result <- query_gwascat(query, query_param=query_param, url=url)
+    result <- query_gwasapi(query, query_param=query_param, url=url)
     list2df(result[["_embedded"]]$associations, exclude="_links")
 }
 
@@ -115,7 +115,7 @@ get_asso <-
 
 get_trait_asso <-
     function(trait=NULL, study=NULL,
-             p_lower=NULL, p_upper=NULL, url=gwascat_url(), start=NULL, size=NULL)
+             p_lower=NULL, p_upper=NULL, url=gwasapi_url(), start=NULL, size=NULL)
 {
     if(is.null(trait) && is.null(study)) {
         stop("Provide trait or study")
@@ -134,6 +134,6 @@ get_trait_asso <-
     if(!is.null(start)) query_param$start <- start
     if(!is.null(size)) query_param$size <- size
 
-    result <- query_gwascat(query, query_param=query_param, url=url)
+    result <- query_gwasapi(query, query_param=query_param, url=url)
     list2df(result[["_embedded"]]$associations, exclude="_links")
 }

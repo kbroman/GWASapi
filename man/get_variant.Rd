@@ -5,7 +5,7 @@
 \title{Get associations for a given variant}
 \usage{
 get_variant(rsnum, chr = NULL, p_lower = NULL, p_upper = NULL,
-  study = NULL, url = gwascat_url(), start = NULL, size = NULL)
+  study = NULL, url = gwasapi_url(), start = NULL, size = NULL)
 }
 \arguments{
 \item{rsnum}{RS number for a variant}

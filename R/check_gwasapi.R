@@ -9,11 +9,11 @@
 #' @export
 #'
 #' @examples
-#' check_gwascat()
-check_gwascat <-
-    function(url=gwascat_url())
+#' check_gwasapi()
+check_gwasapi <-
+    function(url=gwasapi_url())
 {
-    listresult <- query_gwascat("", url=url)
+    listresult <- query_gwasapi("", url=url)
 
     if(length(listresult) == 1 && names(listresult)=="_links" &&
        length(listresult[["_links"]]) == 4 &&

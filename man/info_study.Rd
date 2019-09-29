@@ -4,7 +4,7 @@
 \alias{info_study}
 \title{Information about a study}
 \usage{
-info_study(study, url = gwascat_oldurl())
+info_study(study, url = gwasapi_oldurl())
 }
 \arguments{
 \item{study}{Study identifieer}

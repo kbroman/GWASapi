@@ -5,7 +5,7 @@
 \title{Get GWAS associations for a given region}
 \usage{
 get_asso(chr, bp_lower = NULL, bp_upper = NULL, study = NULL,
-  p_lower = NULL, p_upper = NULL, url = gwascat_url(),
+  p_lower = NULL, p_upper = NULL, url = gwasapi_url(),
   start = NULL, size = NULL)
 }
 \arguments{

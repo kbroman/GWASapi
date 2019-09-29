@@ -4,7 +4,7 @@
 \alias{list_traits}
 \title{List traits}
 \usage{
-list_traits(url = gwascat_url(), start = NULL, size = NULL)
+list_traits(url = gwasapi_url(), start = NULL, size = NULL)
 }
 \arguments{
 \item{url}{The URL of the GWAS Catalog API}

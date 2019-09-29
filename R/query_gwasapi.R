@@ -1,8 +1,8 @@
 # query GWAS Catalog API
 # convert to list if necessary
 #' @importFrom httr GET content stop_for_status
-query_gwascat <-
-    function(query=NULL, query_param=NULL, url=gwascat_url(),
+query_gwasapi <-
+    function(query=NULL, query_param=NULL, url=gwasapi_url(),
              output=c("parsed", "text", "raw"), encoding="UTF-8")
 {
     output <- match.arg(output)
@@ -18,11 +18,11 @@ query_gwascat <-
     httr::stop_for_status(result)
     result <- httr::content(result, encoding=encoding, as=output)
 
-    check_gwascat_error(result)
+    check_gwasapi_error(result)
 }
 
 # check whether the result is an error
-check_gwascat_error <-
+check_gwasapi_error <-
     function(result)
 {
     if(length(result) == 1 && !is.null(names(result)) && names(result)=="errors" &&

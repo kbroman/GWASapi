@@ -1,4 +1,4 @@
 library(testthat)
-library(GWAScat)
+library(GWASapi)
 
-test_check("GWAScat")
+test_check("GWASapi")

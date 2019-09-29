@@ -5,7 +5,7 @@
 \title{Get GWAS associations for a particular trait}
 \usage{
 get_trait_asso(trait = NULL, study = NULL, p_lower = NULL,
-  p_upper = NULL, url = gwascat_url(), start = NULL, size = NULL)
+  p_upper = NULL, url = gwasapi_url(), start = NULL, size = NULL)
 }
 \arguments{
 \item{trait}{Restrict to a particular study}

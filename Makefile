@@ -1,6 +1,6 @@
 .PHONY: doc vignette
 
-all: doc docs/GWAScat.html
+all: doc docs/GWASapi.html
 
 # build package documentation
 doc:
@@ -10,6 +10,6 @@ doc:
 test:
 	R -e 'devtools::test()'
 
-docs/GWAScat.html: vignettes/GWAScat.Rmd
+docs/GWASapi.html: vignettes/GWASapi.Rmd
 	R -e "rmarkdown::render('$<')"
 	mv $(<D)/$(@F) $@

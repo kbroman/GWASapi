@@ -4,7 +4,7 @@
 \alias{list_chr}
 \title{List chromosomes}
 \usage{
-list_chr(url = gwascat_url())
+list_chr(url = gwasapi_url())
 }
 \arguments{
 \item{url}{URL for GWAS catalog API}

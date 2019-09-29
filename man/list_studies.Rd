@@ -4,7 +4,7 @@
 \alias{list_studies}
 \title{List studies}
 \usage{
-list_studies(url = gwascat_url(), start = NULL, size = NULL,
+list_studies(url = gwasapi_url(), start = NULL, size = NULL,
   trait = NULL)
 }
 \arguments{
