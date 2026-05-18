@@ -2,9 +2,8 @@
 
 
 [![R-CMD-check](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml)
-<!--
-[![r-universe badge](https://rqtl.r-universe.dev/GWASapi/badges/version)](https://rqtl.r-universe.dev/GWASapi)
--->
+[![r-universe badge](https://kbroman.r-universe.dev/GWASapi/badges/version)](https://kbroman.r-universe.dev/GWASapi)
+[![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20070559.svg)](https://doi.org/10.5281/zenodo.20070559)
 
 ---
 
@@ -16,18 +15,21 @@ github](https://github.com/pjotrp/racket-summary-stats).
 
 ### Installation
 
-You can install GWASapi from
-[GitHub](https://github.com/rqtl/GWASapi).
+Install [GWASapi](https://github.com/rqtl/GWASapi) from [R
+universe](https://kbroman.r-universe.dev/GWASapi):
 
-You first need to install the
-[remotes](https://remotes.r-lib.org).
+```r
+install.packages("GWASapi", repos="https://kbroman.r-universe.dev")
+```
 
-    install.packages("remotes")
+Alternatively, install it from GitHub with the
+[remotes](https://remotes.r-lib.org) package:
 
-Then use `remotes::install_github()` to install GWASapi.
-
-    library(remotes)
-    install_github("rqtl/GWASapi")
+```r
+#install.packages("remotes")
+library(remotes)
+install_github("rqtl/GWASapi")
+```
 
 ---
 
